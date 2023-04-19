@@ -75,6 +75,16 @@ def _get_jsonl_file(path):
     logger.info(f"Fetching {path}")
     with open_by_file_pattern(path, mode="r") as f:
         return list(map(json.loads, f.readlines()))
+    
+
+
+def open_by_file_pattern(path, mode="r"):
+    return open(path, mode)
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)   
+logger.info("Loading function")
+
 
 
 def _get_json_file(path):
